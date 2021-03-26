@@ -1,0 +1,45 @@
+// 页面标题
+.page-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #CCCCCC;
+}
+//文字快捷class
+@each $animal in $textalign {
+  .text-#{$animal} {
+    text-align: #{$animal} !important;
+  }
+}
+// 边距 class
+$i: 0;
+@each $name, $value in $spacers {  
+  @each $dname, $dvalue in $defualname {
+    .#{$dname}a-#{$i} {
+      #{$dvalue}: map-get($value, y) map-get($value, x) !important;
+    }
+    .#{$dname}y-#{$i} {
+      #{$dvalue}-top: map-get($value, y) !important;
+      #{$dvalue}-bottom: map-get($value, y) !important;
+    }
+    .#{$dname}x-#{$i} {
+      #{$dvalue}-left: map-get($value, x) !important;
+      #{$dvalue}-right: map-get($value, x) !important;
+    }
+    .#{$dname}t-#{$i} {
+      #{$dvalue}-top: map-get($value, y) !important;
+    }
+    .#{$dname}r-#{$i} {
+      #{$dvalue}-right: map-get($value, x) !important;
+    }
+    .#{$dname}b-#{$i} {
+      #{$dvalue}-bottom: map-get($value, y) !important;
+    }
+    .#{$dname}l-#{$i} {
+      #{$dvalue}-left: map-get($value, x) !important;
+    }
+  }
+  $i: $i + 1
+}

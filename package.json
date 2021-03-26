@@ -1,0 +1,33 @@
+{
+  "name": "Lottery_Backstage",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development BUILD_API_URL=/api nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "build:local": "cross-env NODE_ENV=development SITE=local BUILD_API_URL=http://yh168adapi.local.host nuxt generate",
+    "build:test": "cross-env NODE_ENV=production SITE=test BUILD_API_URL=http://10.26.26.152:20264 nuxt generate",
+    "build:webs": "cross-env NODE_ENV=production SITE=webs BUILD_API_URL=https://strbokeo.yqd666.com nuxt generate",
+    "deploy": "docker-compose build --parallel && docker-compose up -d",
+    "deploy2": "docker-compose -f docker-compose2.yml build && docker-compose -f docker-compose2.yml up -d"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.0",
+    "@nuxtjs/proxy": "^2.1.0",
+    "axios-mock-adapter": "^1.19.0",
+    "cookie-universal-nuxt": "^2.1.4",
+    "core-js": "^3.8.3",
+    "cross-env": "^7.0.3",
+    "mockjs": "^1.1.0",
+    "number-precision": "^1.5.0",
+    "nuxt": "^2.14.12",
+    "view-design": "^4.5.0",
+    "vue-quill-editor": "^3.0.6"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1"
+  }
+}

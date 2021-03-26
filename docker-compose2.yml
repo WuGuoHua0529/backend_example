@@ -1,0 +1,13 @@
+version: "3"
+services:
+  lottery_backstage_local:
+    build:
+      context: ./
+      args:                                                                     
+        - BUILD_API_NAME=local
+        - BUILD_DIST_NAME=local
+    image: lottery_backstage_local:v1
+    restart: unless-stopped
+    container_name: lottery_backstage_local
+    ports:
+      - 10978:80

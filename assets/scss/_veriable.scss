@@ -1,0 +1,48 @@
+$textalign: center right left;
+$boderpath: top bottom right left;
+// 边距 class 變量
+$spacer: 20px !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$defualname: (
+  'm': 'margin',
+  'p': 'padding'
+);
+$spacers: (
+  'zero': (
+    'x': 0,
+    'y': 0
+  ),
+  'one': (
+    'x': $spacer-x * 0.25,
+    'y': $spacer-y * 0.25
+  ),
+  'two': (
+    'x': $spacer-x * 0.5,
+    'y': $spacer-y * 0.5
+  ),
+  'three': (
+    'x': $spacer-x * 0.75,
+    'y': $spacer-y * 0.75,
+  ),
+  'four': (
+    'x': $spacer-x * 1,
+    'y': $spacer-y * 1
+  ),
+  'five': (
+    'x': $spacer-x * 1.25,
+    'y': $spacer-y * 1.25
+  )
+) !default;
+
+// RWD 值
+$pc-xxl-media : 1600px;
+$pcs-xxl-media: ($pc-xxl-media - 1);;
+$pc-xl-media  : 1200px;
+$pcs-xl-media : ($pc-xl-media - 1);
+$pc-media     : 965px;
+$pcs-media    : ($pc-media - 1);
+$pad-media    : 768px;
+$pads-media   : ($pad-media - 1);
+$phone-media  : 480px;
+$phones-media : ($phone-media - 1);

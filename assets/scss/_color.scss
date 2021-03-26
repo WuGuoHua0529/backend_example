@@ -1,0 +1,36 @@
+/*
+ * 使用文字色 class="red--text"
+ * 使用背景色 class="red--color"
+ */
+// 基本色系
+$red: #F00;
+$orange: orange;
+$deep-orange: #FF7B00;
+$blue: #00F;
+$green: #008000;
+$yellow: #ffe388;
+$brown: #7e5233;
+$black: #000;
+$white: #fff;
+$grey: #ccc;
+
+$Thecolor: 
+  (".red" $red)
+  (".orange" $orange)
+  (".deep-orange" $deep-orange)
+  (".blue" $blue)
+  (".green" $green)
+  (".yellow" $yellow)
+  (".brown" $brown)
+  (".black" $black)
+  (".grey" $grey)
+  (".white" $white);
+
+@each $colorClass in $Thecolor {
+  #{nth($colorClass, 1)}-text {
+    color: nth($colorClass, 2);
+  }
+  #{nth($colorClass, 1)}-color {
+    background-color: nth($colorClass, 2) !important;
+  }
+}
