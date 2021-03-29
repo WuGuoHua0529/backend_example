@@ -30,10 +30,6 @@
               :key="'c' + cidx"
               :to="{ name: `main-${cit.linkName}` }"
             >
-            <Icon
-              :type="cit.icon"
-              style="font-size: 1.5rem"
-            />
             {{ cit.title }}
             </MenuItem>
           </Submenu>
@@ -67,8 +63,13 @@ export default {
   computed: {
     Menuitems () {
       let items = [
-        { title: '登入站点管理', linkName: 'site', show: true },
-        { title: '操作员管理', linkName: 'operator', show: true }
+        { title: '登入资讯', linkName: 'information', show: true },
+        { title: '使用者设定', linkName: 'user', show: true },
+        { title: '前台管理', linkName: 'operator', show: true, child: [
+          {title: '公告资讯', linkName: ''},
+          {title: '商品管理', linkName: ''},
+          {title: '图片上传', linkName: ''}
+        ] }
       ]
       return items
     },

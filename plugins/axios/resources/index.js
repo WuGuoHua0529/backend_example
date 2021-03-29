@@ -1,12 +1,12 @@
 import login from './login'
-import site from './site'
+import user from './user'
 import account from './account'
 
 export default axios => {
   const baseUrl = process.env.API_URL
   return {
     login: login(axios),
-    site: site(axios),
+    user: user(axios),
     account: account(axios)
   }
 }

@@ -6,7 +6,7 @@
       class="OperatorLogModal"
     >
       <p slot="header" class="text-center">操作日志</p>
-      <LidaTable class="gray-table" :propscolumns="columns" :data="data" :isSearch="false" />
+      <!-- <LidaTable class="gray-table" :propscolumns="columns" :data="data" :isSearch="false" /> -->
       <div slot="footer" class="text-center">
         <Button type="info" @click="moadlStatus = false">确定</Button>
       </div>
@@ -17,7 +17,7 @@
 export default {
   name: "OperatorLogModal",
   component: {
-    LidaTable: () => import("~/components/common/LidaTable.vue"),
+    // LidaTable: () => import("~/components/common/LidaTable.vue"),
   },
   props: {
     status: {

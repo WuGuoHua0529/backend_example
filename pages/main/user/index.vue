@@ -1,18 +1,24 @@
 <template>
-    <div class="seo-seting-page">
-      <div class="seo-seting-title page-title">SEO设定</div>
-      <LidaTable class="gray-table" :propscolumns="columns" :data="tableData" :isSearch="false" :sortStatus="false" />
+    <div class="user-page">
+      <div class="user-title page-title">使用者设定</div>
+      <PageTable
+        class="gray-table"
+        :columns="columns"
+        :data="tableData"
+      />
+      <userModal :status.sync="logMoadlStatus" :editID="editIDStatus" />
     </div>
 </template>
 <script>
 export default {
-  name: "site-page",
+  name: "user-page",
   components: {
-    LidaTable: () => import("~/components/common/LidaTable.vue"),
+    PageTable: () => import("~/components/common/PageTable.vue"),
+    userModal: () => import("~/components/user/userModal.vue"),
   },
   async asyncData ({app, error}) {
     try {
-      const res = await app.$api.site.siteList()
+      const res = await app.$api.user.userList()
       console.log(res);
       return { tableData:  res.data.list }
     } catch (err) {
@@ -22,6 +28,8 @@ export default {
   },
   data() {
     return {
+      editIDStatus: '',
+      logMoadlStatus: false,
       columns: [
         {
           title: "使用者帐号",
@@ -63,7 +71,8 @@ export default {
                 props:{ type: "primary", size: "small" },
                 on: {
                   click: () => {
-                    // this.$router.push({name: 'main-seo-seting-site-pag-site', params:{ site: params.row.siteId} })
+                    this.logMoadlStatus = true
+                    this.editIDStatus = params.row.key
                   },
                 },
               }
@@ -74,7 +83,7 @@ export default {
                 props:{ type: "error", size: "small" },
                 on: {
                   click: () => {
-                    // this.$router.push({name: 'main-seo-seting-site-pag-site', params:{ site: params.row.siteId} })
+                    this.$router.push({name: 'main-user-userLog', query:{ id: params.row.key } })
                   },
                 },
               }
@@ -88,6 +97,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.seo-seting-page {
+.user-page {
 }
 </style>

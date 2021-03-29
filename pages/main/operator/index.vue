@@ -3,10 +3,10 @@
     <div class="operator-title page-title">操作员管理</div>
     <div class="operator-contant">
       <Button type="primary" @click="addOperator('add')">新增操作员</Button>
-      <LidaTable class="gray-table" :propscolumns="columns" :data="operltData" :isSearch="false" />
+      <!-- <LidaTable class="gray-table" :propscolumns="columns" :data="operltData" :isSearch="false" /> -->
     </div>
     <OperatorModal :status.sync="moadlStatus" :action="actionStatus" :editID="editIDStatus" @refreshOperator="refreshList" />
-    <OperatorLogModal :status.sync="logMoadlStatus" :opid="editIDStatus" :data="logData" />
+    <!-- <OperatorLogModal :status.sync="logMoadlStatus" :opid="editIDStatus" :data="logData" /> -->
   </div>
 </template>
 <script>
@@ -14,9 +14,9 @@ import { mapGetters } from "vuex"
 export default {
   name: "operator-page",
   component: {
-    LidaTable: () => import("~/components/common/LidaTable.vue"),
+    // LidaTable: () => import("~/components/common/LidaTable.vue"),
     OperatorModal: () => import("~/components/operator/OperatorModal.vue"),
-    OperatorLogModal: () => import("~/components/operator/OperatorLogModal.vue"),
+    // OperatorLogModal: () => import("~/components/operator/OperatorLogModal.vue"),
   },
   async asyncData ({app, error}) {
     try {

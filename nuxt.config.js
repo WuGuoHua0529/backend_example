@@ -33,6 +33,7 @@ export default {
     '~plugins/iview',
     '~plugins/axios',
     '~plugins/mock',
+    '~plugins/echarts.js',
     { src: '~plugins/nuxt-quill-plugin', ssr: false }
   ],
   components: true,

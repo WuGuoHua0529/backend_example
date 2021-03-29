@@ -8,7 +8,7 @@ export default {
   name: 'main-page',
   layout: 'main',
   created () {
-    this.$router.push({ name: "main-site" });
+    this.$router.push({ name: "main-user" });
   }
 }
 </script>
