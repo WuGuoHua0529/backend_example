@@ -76,8 +76,14 @@ const promiseStructure = data => {
 }
 
 //post
-const requestData = (url, data) => {
-  console.log(data);
+const requestData = (data) => {
+  data = JSON.parse(data)
+  List.list.forEach(it => {
+    if (it.key == data.key) {
+      it.user = data.useracc
+      it.name = data.username
+    }
+  });
 }
 
 const post_promiseStructure = ({ url, data }) => {

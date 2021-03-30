@@ -6,7 +6,7 @@
         :columns="columns"
         :data="tableData"
       />
-      <userModal :status.sync="logMoadlStatus" :editID="editIDStatus" />
+      <userModal :status.sync="logMoadlStatus" :editID="editIDStatus" @refresh="refreshApi" />
     </div>
 </template>
 <script>
@@ -92,6 +92,12 @@ export default {
           }
         },
       ]
+    }
+  },
+  methods: {
+    refreshApi () {
+      console.log(8887);
+      this.$nuxt.refresh()
     }
   }
 }
