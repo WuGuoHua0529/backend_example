@@ -6,7 +6,7 @@
       class="userModal"
     >
       <p slot="header" class="text-center">修改使用者</p>
-      <Form :model="modalData" ref="formValidate" :rules="ruleValidate" label-position="left" :label-width="100">
+      <Form :model="modalData" ref="formValidate" :rules="ruleValidate" label-position="left" :label-width="110">
           <FormItem label="使用者帐号 :" prop="useracc">
             <Input
               type="text"
@@ -23,7 +23,7 @@
           </FormItem>
       </Form>
       <div slot="footer" class="text-center">
-        <Button type="warning" @click="ValidateLongin('formValidate')">确定</Button>
+        <Button type="warning" @click="handleSubmit('formValidate')">确定</Button>
         <Button type="info" @click="moadlStatus = false">取消</Button>
       </div>
     </Modal>
@@ -49,8 +49,8 @@ export default {
         username: ''
       },
       ruleValidate: {
-        // useracc: [{ required: true, message: "此栏不得为空", trigger: "blur" }],
-        // username: [{ required: true, message: "此栏不得为空", trigger: "blur"}],
+        useracc: [{ required: true, message: "此栏不得为空", trigger: "blur" }],
+        username: [{ required: true, message: "此栏不得为空", trigger: "blur"}],
       },
     };
   },
@@ -80,7 +80,26 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    }
+    },
+    async postapi() {
+      try {
+        const obj = {
+          key: this.editID,
+          useracc: this.modalData.useracc,
+          username: this.modalData.username
+        }
+        await this.$api.user.useredit(obj)
+        await this.$emit('refresh', true)
+        this.moadlStatus = false
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    handleSubmit () {
+      this.$refs['formValidate'].validate((valid) => {
+        if (valid) this.postapi()
+      })
+    },
   }
 };
 </script>

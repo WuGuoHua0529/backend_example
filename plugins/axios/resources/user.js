@@ -4,5 +4,6 @@ export default axios => {
   return {
     userList: data => axios.get(`${baseUrl}/user/list`, data), // 清單
     userLogList: data => axios.get(`${baseUrl}/user/loglist`, data), // 登入人资料
+    useredit: data => axios.post(`${baseUrl}/user/edit`, data), // 登入人资料
   }
 }
