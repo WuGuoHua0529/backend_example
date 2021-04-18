@@ -7,7 +7,7 @@ export default {
     // host: '10.26.26.115' // default: localhost
   },
   head: {
-    title: 'Lottery_Backstage',
+    title: 'shop_Backstage',
     htmlAttrs: {
       lang: 'en'
     },
@@ -73,7 +73,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'http://yh168adapi.local.host',
+      target: 'http:/test.local.host',
       changeOrigin: true,
       ws: true,
       pathRewrite: {

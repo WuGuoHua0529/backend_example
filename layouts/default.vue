@@ -29,12 +29,10 @@
   </div>
 </template>
 <script>
-import MainHeader from "@/components/main/MainHeader.vue";
 import MainSider from "@/components/main/MainSider.vue";
 import Copyright from "@/components/main/Copyright.vue";
 export default {
   components: {
-    MainHeader,
     MainSider,
     Copyright
   },

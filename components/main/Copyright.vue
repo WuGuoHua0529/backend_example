@@ -1,6 +1,6 @@
 <template>
   <div class="Copyright">
-    Copyright © 2012 - 2020 GC集团 Ltd All Rights Reserved.v1.0.0.2
+    Copyright © 2021 Chris Reserved.v1.0.0
   </div>
 </template>
 <script>

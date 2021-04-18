@@ -5,7 +5,7 @@
   >
     <div class="layout-sider-logo">
       <router-link :to="{ name: 'index' }">
-        <span class="layout-sider-logo-link">LOTTERY-ADMIN</span>
+        <span class="layout-sider-logo-link">Shop-後台</span>
       </router-link>
       
     </div>
@@ -65,10 +65,10 @@ export default {
       let items = [
         { title: '登入资讯', linkName: 'information', show: true },
         { title: '使用者设定', linkName: 'user', show: true },
-        { title: '前台管理', linkName: 'operator', show: true, child: [
-          {title: '公告资讯', linkName: ''},
-          {title: '商品管理', linkName: ''},
-          {title: '图片上传', linkName: ''}
+        { title: '前台管理', linkName: '', show: true, child: [
+          {title: '公告资讯', linkName: 'front-announcement'},
+          {title: '商品管理', linkName: 'front-commodity'},
+          // {title: '图片上传', linkName: ''}
         ] }
       ]
       return items

@@ -4,7 +4,7 @@
       <h2 class="white-text">後台系統 - BACKEND SYSTEM</h2>
     </Header>
     <div class="login-page-row">
-      <h1 class="login-site-title">XX - 後台</h1>
+      <h1 class="login-site-title">SHOP - 後台</h1>
       <div class="login-form">
         <Form :model="login" ref="formValidate" :rules="ruleValidate">
           <FormItem label="帐号 :" prop="username">
@@ -63,8 +63,8 @@ export default {
         this.$cookies.removeAll();
         let res = await this.$api.login.loginUser(obj);
         if (res.data) {
-          this.$cookies.set('User', '暂时登入人', {maxAge: 60 * 60 * 24})
-          await this.$router.push({ name: "main-site" });
+          this.$cookies.set('USER_NAME', '暂时登入人', {maxAge: 60 * 60 * 24})
+          await this.$router.push({ name: "main-information" });
         }
       } catch (error) {
         this.$Notice.error({ title: `登入错误！` });

@@ -7,9 +7,6 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "build:local": "cross-env NODE_ENV=development SITE=local BUILD_API_URL=http://yh168adapi.local.host nuxt generate",
-    "build:test": "cross-env NODE_ENV=production SITE=test BUILD_API_URL=http://10.26.26.152:20264 nuxt generate",
-    "build:webs": "cross-env NODE_ENV=production SITE=webs BUILD_API_URL=https://strbokeo.yqd666.com nuxt generate",
     "deploy": "docker-compose build --parallel && docker-compose up -d",
     "deploy2": "docker-compose -f docker-compose2.yml build && docker-compose -f docker-compose2.yml up -d"
   },
